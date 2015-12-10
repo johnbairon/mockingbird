@@ -1,0 +1,30 @@
+<ion-view view-title="Canciones Recomendadas">
+  <ion-content>
+
+    <div class="card" ng-repeat="rec in recommends">
+      <div class="item item-divider">
+        <h2>{{rec.song.name}}</h2>
+      </div>
+
+      <div class="list card">
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios-person"></i>
+          Artista: {{rec.song.artist}}
+        </a>
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios-musical-notes"></i>
+          Genero: {{rec.song.genre}}
+        </a>
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios-time"></i>
+          Fecha Recomendación: {{rec.date | date : format : timezone}}
+        </a>
+
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view class="bar-positive" view-title="Ranking Canciones">
+  <ion-content>
+
+    <div class="card" ng-repeat="r in ranking">
+      <div class="item item-divider">
+        <h2>{{r.name}}</h2>
+        <span class="badge badge-positive">Puntuación: {{r.cantidad}}</span>
+      </div>
+
+      <div class="list card">
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios-person"></i>
+          Artista: {{r.artist}}
+        </a>
+
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
