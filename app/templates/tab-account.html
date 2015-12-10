@@ -1,5 +1,12 @@
 <ion-view view-title="Cuenta">
   <ion-content class="padding">
-    <button class="button button-block button-positive" ng-click="logout()">Cerrar sesión</button>
+    <div class="container"align="center">
+    	<h1>{{nombre}}</h1>
+	    <img class="images" width="300" height="300" ng-src="{{imagenPersonal}}">
+	  </div>
+    <button class="button button-block button button-assertive" ng-click="logout()">
+    	<span class="ion-social-googleplus"></span>Cerrar sesión</button>    
   </ion-content>
+
 </ion-view>
+
