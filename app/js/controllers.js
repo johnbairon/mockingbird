@@ -12,10 +12,10 @@ angular.module('starter.controllers', ['usuario'])
 })
 
 .controller('SongsCtrl', function($scope, $ionicPopup, back_api,UsuarioService, $state) {
-  console.log('US------------ '+UsuarioService.getTokenGoogle());
+  
   if ( UsuarioService.getTokenGoogle() =='') {
      $state.go('login'); 
-  } 
+  } else{
   back_api.allSongs().success(function(data) {
     $scope.songs = data;
   });
@@ -30,33 +30,35 @@ angular.module('starter.controllers', ['usuario'])
     });
 
   };
-
+}
 })
 
 .controller('RecommendationCtrl', function($state, $scope, back_api,UsuarioService) {
   if (UsuarioService.getTokenGoogle() =='') {
      $state.go('login'); 
-  } 
+  } else{
 
   back_api.allRecommendations().success(function(data) {
     $scope.recommends = data;
   });
+}
 
 })
 
 .controller('RankingCtrl', function($scope, back_api, $state, UsuarioService) {
   if ( UsuarioService.getTokenGoogle() =='') {
      $state.go('login'); 
-  } 
+  } else{
   back_api.ranking().success(function(data) {
     $scope.ranking = data;
   });
+}
 })
 
 .controller('AccountCtrl', function($scope, $state, UsuarioService) {
    if ( UsuarioService.getTokenGoogle() =='') {
      $state.go('login'); 
-  }
+  }else{
   $scope.imagenPersonal = UsuarioService.getImagen();
   $scope.nombre = UsuarioService.getNombre();
   $scope.logout = function() {
@@ -67,6 +69,7 @@ angular.module('starter.controllers', ['usuario'])
     window.location.replace(url);
     $state.go('login');
   }
+}
 })
 
 
