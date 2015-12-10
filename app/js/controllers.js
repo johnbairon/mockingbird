@@ -51,8 +51,10 @@ angular.module('starter.controllers', ['usuario'])
 
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+.controller('AccountCtrl', function($scope,$state,UsuarioService) {
+  $scope.logout = function() {
+    UsuarioService.setImagen('');
+    UsuarioService.setNombre('');
+    $state.go('login');
   };
 });
